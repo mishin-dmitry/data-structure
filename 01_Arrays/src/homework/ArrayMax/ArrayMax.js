@@ -15,7 +15,18 @@ function findSmallestTransaction(transactions) {
 }
 
 function findBestStudentMistakes(students) {
-	return -1; // Please implement
+	let errorsCount = null;
+
+	students.forEach(mark => {
+		if (errorsCount === null) {
+			errorsCount = mark;
+			return;
+		}
+
+		errorsCount = Math.min(mark, errorsCount);
+	});
+
+	return errorsCount;
 }
 
 function findAverageTime(times) {

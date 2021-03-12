@@ -39,12 +39,12 @@ function runTests() {
   findSmallestTransactionTest([-1000, -100, -10, -1, -1]);
   findSmallestTransactionTest([-1000, -100, -10, -1, -1, 0]);
   findSmallestTransactionTest([-Infinity]);
-  //
-  // findBestStudentMistakesTest([9, 4, 1, 8, 7, 13, 6, 5])
-  // findBestStudentMistakesTest([1000])
-  // findBestStudentMistakesTest([9, 4, 1, 8, 7, 13, 6, 5, 1, 1, 1, 1, 1])
-  // findBestStudentMistakesTest([9, 4, 1, 8, 7, 13, 6, 5, 0])
-  // findBestStudentMistakesTest([-Infinity])
+
+  findBestStudentMistakesTest([9, 4, 1, 8, 7, 13, 6, 5])
+  findBestStudentMistakesTest([1000])
+  findBestStudentMistakesTest([9, 4, 1, 8, 7, 13, 6, 5, 1, 1, 1, 1, 1])
+  findBestStudentMistakesTest([9, 4, 1, 8, 7, 13, 6, 5, 0])
+  findBestStudentMistakesTest([-Infinity])
   //
   // findAverageTimeTest([9999])
   // findAverageTimeTest([9, 4, 1, 8, 7, 9, 4, 1, 8, 7, 8, 7, 18, 3, 13, 6, 5])
