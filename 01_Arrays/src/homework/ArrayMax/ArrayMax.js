@@ -1,36 +1,20 @@
 function findSmallestTransaction(transactions) {
-	let minTransaction;
+	return transactions.reduce((acc, cur) => {
+		const minAbs = Math.min(Math.abs(acc), Math.abs(cur));
 
-	transactions.forEach(transaction => {
-		if (!minTransaction) {
-			minTransaction = transaction;
-			return;
-		}
-
-		const minAbs = Math.min(Math.abs(minTransaction), Math.abs(transaction));
-		minTransaction = minAbs === Math.abs(minTransaction) ? minTransaction : transaction;
+		return minAbs === Math.abs(acc) ? acc : cur;
 	});
-
-	return minTransaction;
 }
 
 function findBestStudentMistakes(students) {
-	let errorsCount = null;
-
-	students.forEach(mark => {
-		if (errorsCount === null) {
-			errorsCount = mark;
-			return;
-		}
-
-		errorsCount = Math.min(mark, errorsCount);
-	});
-
-	return errorsCount;
+	return students.reduce((acc, cur) => Math.min(acc, cur));
 }
 
 function findAverageTime(times) {
-	return -1; // Please implement
+	const studentsCount = times.length;
+	const averageTime = times.reduce((acc, curValue) => acc + curValue, 0);
+
+	return averageTime / studentsCount;
 }
 
 function findMostProfitableClient(income) {
