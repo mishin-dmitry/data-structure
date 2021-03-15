@@ -18,7 +18,14 @@ function findAverageTime(times) {
 }
 
 function findMostProfitableClient(income) {
-	return -1; // Please implement
+	// Найдем сумму заказов для 1 клиента
+	const findClientSum = (orders) => orders.reduce((acc, cur) => acc + cur);
+
+	return income.reduce((acc, curValue, index) => {
+		const currentSum = findClientSum(curValue);
+
+		return acc.currentSum < currentSum ? { currentSum, index } : acc;
+	}, { currentSum: 0, index: -1 }).index;
 }
 
 module.exports = {
