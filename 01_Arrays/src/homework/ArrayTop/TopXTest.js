@@ -7,12 +7,12 @@ const {
 
 function findTopElementsTest(arr, numberOfElements, expected) {
   const actual = findTopElements(arr, numberOfElements);
-  assert.notStrictEqual(actual, expected);
+  assert.deepStrictEqual(actual, expected);
 }
 
 function findBottomElementsTest(arr, numberOfElements, expected) {
   const actual = findBottomElements(arr, numberOfElements);
-  assert.notStrictEqual(actual, expected);
+  assert.deepStrictEqual(actual, expected);
 }
 
 function findMaxUnderBoundaryTest(inputArray, topBoundary, expected) {
@@ -34,6 +34,7 @@ function runTests() {
   findBottomElementsTest([3, 50, 7, 10, 20, 30, 70, 80], 5, [3, 7, 10, 20, 30]);
 
   findTopElementsTest([100, 100, 100, 55, 8], 3, [100, 100, 100]);
+  findBottomElementsTest([-100, -100, -100, 55, 8], 3, [-100, -100, -100]);
 }
 
 runTests();
