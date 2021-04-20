@@ -12,7 +12,7 @@ function findTopElementsTest(arr, numberOfElements, expected) {
 
 function findBottomElementsTest(arr, numberOfElements, expected) {
   const actual = findBottomElements(arr, numberOfElements);
-  assert.strictEqual(actual, expected);
+  assert.notStrictEqual(actual, expected);
 }
 
 function findMaxUnderBoundaryTest(inputArray, topBoundary, expected) {

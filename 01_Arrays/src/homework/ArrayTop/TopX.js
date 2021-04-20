@@ -1,6 +1,6 @@
 function findMaxUnderBoundary(inputArray, topBoundary) {
   // Найдем текущий максимум
-  let currentMax = +Infinity;
+  let currentMax = -Infinity;
   for (let k = 0; k < inputArray.length; k++) {
     // Рассмотрим только те элементы, которые меньше заданного числа
     if (inputArray[k] < topBoundary) {
@@ -31,8 +31,30 @@ function findTopElements(inputArray, numberOfElements) {
   return topElements;
 }
 
+function findMinUnderBoundary(arr, bottom) {
+  let currentMin = +Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > bottom) {
+      currentMin = Math.min(currentMin, arr[i])
+    }
+  }
+
+  return currentMin;
+}
+
 function findBottomElements(inputArray, numberOfElements) {
-  return [0, 0, 0]; // Please implement
+  const bottomElements = new Array(numberOfElements);
+
+  let previousMin = -Infinity;
+
+  for (let i = 0; i < numberOfElements; i++) {
+    const currentMin = findMinUnderBoundary(inputArray, previousMin);
+    previousMin = currentMin;
+    bottomElements[i] = currentMin;
+  }
+
+  return bottomElements;
 }
 
 function main() {
