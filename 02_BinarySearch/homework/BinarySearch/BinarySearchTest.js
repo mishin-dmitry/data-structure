@@ -46,7 +46,7 @@ function testFindPhoneNumber() {
 function main() {
     testDoIKnowThisLanguage();
     testFindUsers();
-    // testFindPhoneNumber();
+    testFindPhoneNumber();
     console.log('All tests for const passed successfully! Congrats');
   }
   

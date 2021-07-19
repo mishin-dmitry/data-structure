@@ -25,7 +25,7 @@ class DatingUser {
   }
 }
 
-const findValue = (array, target) => {
+const findValueBySimpleBinarySearch = (array, target) => {
   let left = 0
   let right = array.length - 1
   let middle = Math.floor((left + right) / 2)
@@ -47,7 +47,7 @@ const findValue = (array, target) => {
 
 function findUsers(usersSortedByIQ, lowerIQBound, professorIQ) {
   if (lowerIQBound === professorIQ) {
-    return findValue(usersSortedByIQ, lowerIQBound)
+    return findValueBySimpleBinarySearch(usersSortedByIQ, lowerIQBound)
   }
 
   const targetDiff = professorIQ - lowerIQBound
@@ -73,8 +73,39 @@ function findUsers(usersSortedByIQ, lowerIQBound, professorIQ) {
   return usersSortedByIQ.slice(left, right + 1);
 }
 
+const findValue = (array, target, isReverse) => {
+  let left = 0
+  let right = array.length - 1
+  let middle = Math.floor((left + right) / 2)
+
+  while (left <= right) {
+    if (array[middle] < target) {
+      if (isReverse) {
+        right = middle - 1
+      } else {
+        left = middle + 1
+      }
+    } else if (array[middle] > target) {
+      if (isReverse) {
+        left = middle + 1
+      } else {
+        right = middle - 1
+      }
+    } else {
+      return middle
+    }
+
+    middle = Math.floor((left + right) / 2)
+  }
+
+  return -1
+}
+
 function findPhoneNumber(sortedPhoneNumbers, search) {
-  return -1; //please implement
+  const head = sortedPhoneNumbers[0]
+  const tail = sortedPhoneNumbers[sortedPhoneNumbers.length - 1]
+
+  return findValue(sortedPhoneNumbers, search, head > tail)
 }
 
 module.exports = {
