@@ -1,3 +1,20 @@
+function mySortedCheck(array) {
+  let isSorted = true
+
+  for (let i = 0; i < array.length; i++) {
+    const [cur, next] = [array[i], array[i + 1]]
+
+    if (cur > next) {
+      isSorted = false
+      break
+    }
+  }
+
+  return isSorted
+}
+
+
+
 //
 // НЕ СМОТРИТЕ В ЭТОТ ФАЙЛ=)
 // ЗАКРОЙТЕ ЭТОТ КОД!!
@@ -141,5 +158,6 @@ function isSorted(array) {
 }
 
 module.exports = {
-  isSorted
+  isSorted,
+  mySortedCheck
 }
