@@ -7,17 +7,10 @@ function testTextEditor() {
     assert.strictEqual(editor.textLength, 0);
 
     editor.insertCharacterAt(0, 'П');
-    console.log(editor.textLength)
     editor.insertCharacterAt(1, 'р');
-    console.log(editor.textLength)
     editor.insertCharacterAt(2, 'и');
-    console.log(editor.textLength)
     editor.insertCharacterAt(3, 'ф');
-    console.log(editor.textLength)
-
     editor.insertCharacterAt(4, 'е');
-    console.log(editor.textLength)
-
     editor.insertCharacterAt(5, 'т');
 
     let expected = ['П', 'р', 'и', 'ф', 'е', 'т'];
