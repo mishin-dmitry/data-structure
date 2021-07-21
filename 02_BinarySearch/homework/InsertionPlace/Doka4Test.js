@@ -34,7 +34,6 @@ function testInsertPlayer() {
     ];
 
     assert.deepStrictEqual(leaderboard, expected);
-
 }
 
 function main() {
