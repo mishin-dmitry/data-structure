@@ -58,7 +58,7 @@ class HashMap {
     for (let i = 0; i < this.size; i++) {
       const probingIndex = (index + i) % this.size;
       const entry = this.entries[probingIndex];
-      console
+
       if (entry == null || entry.key === key) {
         return probingIndex;
       }

@@ -2,7 +2,9 @@ const { DynamicArray } = require('../../examples/Dynamic/DynamicArray');
 
 class VeryDynamicArray extends DynamicArray {
   deleteElementAt(index) {
-    // please implement
+    if (this.entries[index]) {
+      this.entries[index] = undefined
+    }
   }
 }
 
