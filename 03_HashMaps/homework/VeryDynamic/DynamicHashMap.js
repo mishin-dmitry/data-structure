@@ -5,6 +5,11 @@ class DynamicHashMap extends HashMap {
       const index = this.findGoodIndex(key)
 
       this.entries[index] = undefined;
+      this.numberOfElements--;
+
+      if (this.numberOfElements === (this.size / 4)) {
+        this.resize(this.size / 2)
+      }
     }
 
     getAllKeys() {

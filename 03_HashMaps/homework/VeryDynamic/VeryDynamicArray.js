@@ -7,7 +7,7 @@ class VeryDynamicArray extends DynamicArray {
       this.numberOfElements--;
 
       if (this.numberOfElements === (this.size / 4)) {
-        this.resize(this.size / 4)
+        this.resize(this.size / 2)
       }
     }
   }
